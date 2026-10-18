@@ -11,8 +11,11 @@ export function SubscribersTable({ subscribers }: { subscribers: Subscriber[] })
   return (
     <div>
       <div className="mb-5 flex justify-end">
+        {/* A file download from a route handler: a plain anchor is correct, next/link would try a page navigation. */}
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a
           href="/admin/export/subscribers"
+          download
           className="inline-flex h-11 items-center gap-2 rounded-lg border border-ink-200 bg-white px-4 text-sm font-semibold text-ink-900 hover:border-ink-400"
         >
           <Download className="size-4" aria-hidden="true" />
